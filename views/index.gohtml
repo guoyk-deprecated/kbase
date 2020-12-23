@@ -1,0 +1,57 @@
+{{define "index"}}
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <title>Knowledge Base :: guoYK</title>
+        {{template "_head"}}
+    </head>
+    <body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-12">
+                <h1><i class="fa fa-database"></i> Knowledge Base <small class="text-muted">by guoYK</small></h1>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Index</td>
+                        <td>Revision</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range .Indices}}
+                        <tr>
+                            <td>{{.Index}}</td>
+                            <td>{{.Rev}}</td>
+                        </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Kind</td>
+                        <td>Count</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range .Kinds}}
+                        <tr>
+                            <td>{{.Kind}}</td>
+                            <td>{{.Count}}</td>
+                        </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{template "_foot"}}
+    </body>
+    </html>
+{{end}}
